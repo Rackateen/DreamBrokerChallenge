@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request
 import json
+#By Lewis Torrington, 17.04.2019
 
 my_app = Flask(__name__)
-
 
 @my_app.route('/', methods=['GET', 'POST'])
 def index():
@@ -33,7 +33,7 @@ def index():
 				characterCount.append(tempCharDict.copy())
 			tempCharDict = dict()
 		final["characterCount"] = characterCount
-		return json.dumps(final), 201
+		return json.dumps(final), 200
 	else:
     		return "Welcome to Lewis' magic API"
 
