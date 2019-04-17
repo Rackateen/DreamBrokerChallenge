@@ -16,8 +16,6 @@ def index():
 		#get the request data
 		some_json = request.get_json()
 		
-		print "test flag"
-		
 		#parse it into python
 		parsed_dict = json.loads(some_json)
 		text = parsed_dict["text"]
