@@ -18,7 +18,7 @@ def index():
 		
 		#parse it into python
 		#parsed_dict = json.loads(some_json)
-		text = parsed_dict["text"]
+		text = some_json["text"]
 		
 		return json.dumps(final), 201
 	else:
