@@ -20,10 +20,9 @@ def index():
 		final["WordCount"] = len(text.split())
 		characterCount = []
 		tempCharDict = dict()
-		tempText = text.lower()
-		tempText = ''.join(sorted(tempText))
+		tempText = ''.join(sorted(text.lower()))
 		for i in tempText:
-			tempCharDict[i] = text.count(i)
+			tempCharDict[i] = tempText.count(i)
 			if i.isalpha() and not tempCharDict in characterCount:
 				characterCount.append(tempCharDict.copy())
 			tempCharDict = dict()
