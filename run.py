@@ -23,7 +23,8 @@ def index():
 		final["textLength"] = textLength
 		final["WordCount"] = len(text.split())
 		#final["characterCount"] = Counter(text)
-		final["characterCount"] = {i:text.count(i) for i in text}
+		for i in text:
+			final["characterCount"[i]] = text.count(i)
 		return json.dumps(final), 201
 	else:
     		return "Welcome to Lewis' magic API"
