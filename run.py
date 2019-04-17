@@ -19,6 +19,7 @@ def index():
 
 		#churn through data
 		textLength = {"withSpaces": len(text), "withoutSpaces": (len(text) - text.count(' '))}
+		final["textLength"] = textLength
 		final["WordCount"] = len(text.split())		
 		
 		return json.dumps(final), 201
