@@ -23,10 +23,11 @@ def index():
 		tempCharDict = dict()
 		for i in text:
 			tempCharDict[i] = text.count(i)
-			characterCount.append(tempCharDict.copy())
+			if not tempCharDict in characterCount:
+				characterCount.append(tempCharDict.copy())
 			tempCharDict = dict()
 		
-		final["characterCount"] = characterCount.sort()
+		final["characterCount"] = characterCount
 		return json.dumps(final), 201
 	else:
     		return "Welcome to Lewis' magic API"
