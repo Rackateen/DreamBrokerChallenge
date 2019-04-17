@@ -9,11 +9,7 @@ my_app = Flask(__name__)
 def index():
 	if (request.method == 'POST'):
 		#format output python dict
-		final = {
-		"textLength": "",
-		"WordCount": 0,
-		"characterCount": {"": 0}
-		}
+		final = dict()
 		#get the request data
 		some_json = request.get_json()
 		text = some_json["text"]
@@ -23,8 +19,11 @@ def index():
 		final["textLength"] = textLength
 		final["WordCount"] = len(text.split())
 		#final["characterCount"] = Counter(text)
+		characterCount = dict()
 		for i in text:
-			final["characterCount"[i]] = text.count(i)
+			characterCount[i] = text.count(i)
+		
+		final["characterCount"] = characterCount
 		return json.dumps(final), 201
 	else:
     		return "Welcome to Lewis' magic API"
