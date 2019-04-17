@@ -19,9 +19,11 @@ def index():
 		final["textLength"] = textLength
 		final["WordCount"] = len(text.split())
 		#final["characterCount"] = Counter(text)
-		characterCount = dict()
+		characterCount = []
+		tempCharDict = dict()
 		for i in text:
-			characterCount[i] = text.count(i)
+			tempCharDict[i] = text.count(i)
+			characterCount.append(tempCharDict.copy())
 		
 		final["characterCount"] = characterCount
 		return json.dumps(final), 201
