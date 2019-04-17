@@ -21,7 +21,8 @@ def index():
 		#final["characterCount"] = Counter(text)
 		characterCount = []
 		tempCharDict = dict()
-		for i in text:
+		tempText = ''.join(sorted(text.lower()))
+		for i in tempText:
 			tempCharDict[i] = text.count(i)
 			if i.isalpha() and not tempCharDict in characterCount:
 				characterCount.append(tempCharDict.copy())
