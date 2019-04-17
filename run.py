@@ -23,7 +23,7 @@ def index():
 		tempCharDict = dict()
 		for i in text:
 			tempCharDict[i] = text.count(i)
-			if not tempCharDict in characterCount:
+			if i.isalpha() and not tempCharDict in characterCount:
 				characterCount.append(tempCharDict.copy())
 			tempCharDict = dict()
 		
