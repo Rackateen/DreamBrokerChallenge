@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from collections import Counter
+#from collections import Counter
 import json
 
 my_app = Flask(__name__)
@@ -22,7 +22,8 @@ def index():
 		textLength = {"withSpaces": len(text), "withoutSpaces": (len(text) - text.count(' '))}
 		final["textLength"] = textLength
 		final["WordCount"] = len(text.split())
-		final["characterCount"] = Counter(text)
+		#final["characterCount"] = Counter(text)
+		final["characterCount"] = {i:text.count(i) for i in text}
 		return json.dumps(final), 201
 	else:
     		return "Welcome to Lewis' magic API"
