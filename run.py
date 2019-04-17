@@ -15,10 +15,8 @@ def index():
 		}
 		#get the request data
 		some_json = request.get_json()
-		
-		#parse it into python
-		#parsed_dict = json.loads(some_json)
 		text = some_json["text"]
+		final["WordCount"] = len(text.split())		
 		
 		return json.dumps(final), 201
 	else:
