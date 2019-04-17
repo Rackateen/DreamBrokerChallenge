@@ -16,6 +16,9 @@ def index():
 		#get the request data
 		some_json = request.get_json()
 		text = some_json["text"]
+
+		#churn through data
+		textLength = {"withSpaces": len(text), "withoutSpaces": (len(text) - text.count(' '))}
 		final["WordCount"] = len(text.split())		
 		
 		return json.dumps(final), 201
