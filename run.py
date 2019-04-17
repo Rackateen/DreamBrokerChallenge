@@ -33,7 +33,7 @@ def index():
 				characterCount.append(tempCharDict.copy())
 			tempCharDict = dict()
 		final["characterCount"] = characterCount
-		return json.dumps(final), 200
+		return json.dumps(final)
 	else:
     		return "Welcome to Lewis' magic API"
 
