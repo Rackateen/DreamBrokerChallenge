@@ -16,7 +16,7 @@ def index():
 		
 		#get the request data
 		some_json = request.get_json()
-		if not some_json["text"]:
+		if not "text" in some_json:
 			return response('failed', 'JSON sent must be text', 401)
 		text = some_json["text"]
 
