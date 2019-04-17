@@ -17,10 +17,10 @@ def index():
 		some_json = request.get_json()
 		
 		#parse it into python
-		parsed_dict = json.loads(some_json)
+		#parsed_dict = json.loads(some_json)
 		text = parsed_dict["text"]
 		
-		return jsonify(final), 201
+		return json.dumps(final), 201
 	else:
     		return "Welcome to Lewis' magic API"
 
