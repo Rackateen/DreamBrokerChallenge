@@ -20,7 +20,7 @@ def index():
 		parsed_dict = json.loads(some_json)
 		text = parsed_dict["text"]
 		
-		return final, 201
+		return json.dumps(final), 201
 	else:
     		return "Welcome to Lewis' magic API"
 
