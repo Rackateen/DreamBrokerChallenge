@@ -24,6 +24,7 @@ def index():
 		for i in text:
 			tempCharDict[i] = text.count(i)
 			characterCount.append(tempCharDict.copy())
+			tempCharDict = dict()
 		
 		final["characterCount"] = characterCount
 		return json.dumps(final), 201
