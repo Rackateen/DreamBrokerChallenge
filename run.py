@@ -9,7 +9,7 @@ def index():
 	if (request.method == 'POST'):
 		#test whether the data is valid
 		if not request.content_type == 'application/json':
-       			return response('failed', 'Content-type must be application/json', 401)		
+       			return 'Content-type must be application/json', 401	
 		
 		#format output python dict
 		final = dict()
@@ -17,7 +17,7 @@ def index():
 		#get the request data
 		some_json = request.get_json()
 		if not "text" in some_json:
-			return response('failed', 'JSON sent must be text', 401)
+			return 'JSON sent must be text', 401
 		text = some_json["text"]
 
 		#churn through data
