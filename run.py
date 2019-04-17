@@ -12,7 +12,7 @@ def index():
 		final = {
 		"textLength": "",
 		"WordCount": 0,
-		"characterCount": ""
+		"characterCount": {"": 0}
 		}
 		#get the request data
 		some_json = request.get_json()
