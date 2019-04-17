@@ -7,11 +7,17 @@ my_app = Flask(__name__)
 @my_app.route('/', methods=['GET', 'POST'])
 def index():
 	if (request.method == 'POST'):
+		#test whether the data is valid
+		if not request.content_type == 'application/json':
+       			return response('failed', 'Content-type must be application/json', 401)		
+		
 		#format output python dict
 		final = dict()
-
+		
 		#get the request data
 		some_json = request.get_json()
+		if not some_json["text"]:
+			return response('failed', 'JSON sent must be text', 401)
 		text = some_json["text"]
 
 		#churn through data
