@@ -23,7 +23,7 @@ def index():
 		#churn through data
 		textLength = {"withSpaces": len(text), "withoutSpaces": (len(text) - text.count(' '))}
 		final["textLength"] = textLength
-		final["WordCount"] = len(text.split())
+		final["wordCount"] = len(text.split())
 		characterCount = []
 		tempCharDict = dict()
 		tempText = ''.join(sorted(text.lower()))
